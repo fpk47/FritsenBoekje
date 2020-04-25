@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "main.pdf"
-          target: "/var/www/html/boekje.pdf"  
+          source: "boekje.pdf"
+          target: "/var/www/html/"  
