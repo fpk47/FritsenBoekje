@@ -14,7 +14,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: boekje.pdf
-          path: boekje.pdf
+          path: main.pdf
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "boekje.pdf"
+          source: "main.pdf"
           target: "/var/www/html"  
