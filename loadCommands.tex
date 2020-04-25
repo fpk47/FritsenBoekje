@@ -127,15 +127,33 @@
 \newcommand{\quotes}[1]{\textquotedblleft\textit{#1}\textquotedblright}
 
 \setlength\tabcolsep{0pt}
-\newcommand{\kaartnaam}[3]{
+\newcommand{\kaartnaam}[5]{
 \begin{minipage}[c][2.5cm][c]{1.0\textwidth}
-    \begin{tabularx}{\textwidth}{ccXm{0.10cm}}
-        \includegraphics[height=1.6cm]{img/#2.png} &
-        \includegraphics[height=1.6cm]{img/#2.png} &
-        \vspace{-1.35cm}
-        \begin{flushright}
-            #3
-        \end{flushright}&
+    \begin{tabularx}{\textwidth}{Xccccm{0.30cm}}
+        \vspace{-1.6cm}
+        \begin{flushleft}
+            #1
+        \end{flushleft}&
+        \ifx&#2&%
+            &
+        \else
+            \includegraphics[height=2cm]{img/cards/#2.png} \hspace{0.06cm} &
+        \fi
+        \ifx&#3&%
+            &
+        \else
+            \includegraphics[height=2.0cm]{img/cards/#3.png} \hspace{0.06cm} &
+        \fi
+        \ifx&#4&%
+            &
+        \else
+            \includegraphics[height=2.0cm]{img/cards/#4.png} \hspace{0.06cm} &
+        \fi
+        \ifx&#5&%
+            &
+        \else
+            \includegraphics[height=2.0cm]{img/cards/#5.png} &
+        \fi
     \end{tabularx}
 \end{minipage}
 }
