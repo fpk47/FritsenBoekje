@@ -1,0 +1,70 @@
+\newpage
+\thispagestyle{empty}
+
+% Define block styles
+\tikzstyle{thickBlock} = [rectangle, draw, fill=green!15, 
+    text width=12em, text centered, ultra thick, minimum height=2em]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=12em, text centered, thick, minimum height=2em]
+\tikzstyle{line} = [draw, -stealth', line width=0.05cm]
+\tikzstyle{cloud} = [draw, rectangle, thick, rounded corners=8, fill=red!20, minimum height=2em, text width=12em, text badly centered]
+
+\mbox{}
+\vfill
+\begin{minipage}[c]{.45\textwidth}
+\centering
+  \includegraphics[height=80mm,center]{img/Frits.png}
+  \captionof{figure}{\Large{\texttt{Frits}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+  \includegraphics[height=80mm,center]{img/Willem.png}
+  \captionof{figure}{\Large{\texttt{Willem}}}
+\end{minipage}
+\vfill
+\begin{figure}[H]
+   \centering
+    \begin{tikzpicture}[node distance=1cm and 1cm, >=stealth, bend angle=45,auto]
+    % Place nodes
+    \node [thickBlock] (block_1) {\large{\textbf{Start beurt}}};
+    \node [cloud, right=of block_1] (cloud_1) {Heb je kaarten?};
+    \node [thickBlock, right=of cloud_1] (block_end_1) {\large{\textbf{Einde beurt}}};
+    \node [cloud, below=of cloud_1] (cloud_2) {Kan \'en wil je een zet\footnotemark[1] doen?};
+    \node [block, below=of cloud_2] (block_2) {Doe een zet\footnotemark[1]};
+    \node [cloud, right=of block_2] (cloud_3) {Heb je \textbf{\'e\'en} kaart over?};
+    \node [cloud, below=of cloud_3] (cloud_4) {Heb je \textbf{g\'e\'en} kaarten over?};
+    \node [block, above=of cloud_3] (block_3) {Zeg \quotes{laatste Frits}};
+    \node [block, left=of cloud_4] (block_4) {Zeg \quotes{Frits} en \textbf{Frits}\footnotemark[2]};
+    \node [block, left=of cloud_2] (block_5) {\textbf{Frits}\footnotemark[2] en pak twee kaarten\footnotemark[3]};
+    \node [cloud, below=of block_5] (cloud_5) {Kan \'en wil je een zet\footnotemark[3] doen?};
+    \node [block, below=of cloud_5] (block_6) {Begin een nieuwe stapel};
+    \node [thickBlock, below=of block_4] (block_end_2) {\large{\textbf{Einde beurt}}};
+    % Draw edges
+     \path [line] (block_1) -/ (cloud_1);
+     \path [line] (cloud_1) -/ node {\textbf{Ja}} (cloud_2);
+     \path [line] (cloud_1) -- node[above] {\textbf{Nee}} (block_end_1);
+     \path [line] (cloud_2) -/ node {\textbf{Ja}} (block_2);
+     \path [line] (block_2) -/ (cloud_3);
+     \path [line] (cloud_3) -/ node[right] {\textbf{Ja}} (block_3);
+     \path [line] (cloud_3) -/ node {\textbf{Nee}} (cloud_4);
+     \path [line] (cloud_4) -/ node[above] {\textbf{Ja}} (block_4);
+     \path [line] (block_3) -/ (block_end_1);
+     \path [line] (cloud_2) -/ node[above] {\textbf{Nee}} (block_5);
+     \path [line] (block_5) -/ (cloud_5);
+     \path [line] (cloud_5) -/ node[above] {\textbf{Ja}} (block_2);
+     \path [line] (cloud_5) -/ node {\textbf{Nee}} (block_6);
+     \path [line] (block_6) |- (block_end_2);
+     \path [line] (block_4) -- (block_end_2);
+     \path [line] (cloud_4) |- node[right] {\textbf{Nee}} (block_end_2);
+     \node[align=center,font=\bfseries, yshift=3em] (title) at (current bounding box.north){\Huge{\texttt{Een Fritsbeurt}}};
+\end{tikzpicture}
+\end{figure}
+\vfill
+
+
+\footnotetext[1]{zie pagina \pageref{sec:regels_kort}}
+\footnotetext[2]{\textbf{Fritsen} is het drinken van één shotglaasje bier (zie definitie \ref{def:fritsen})}
+\footnotetext[3]{zolang er dichte kaarten zijn}
+\newpage
+

@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[top=1cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{anyfontsize}
+\usepackage{float}
+\usepackage{alphalph}
+\usepackage{lipsum}
+\usepackage{graphicx} 
+\usepackage{blindtext}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{xstring}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage[labelformat=empty]{caption}
+\usepackage{fancyhdr}
+\usepackage[lastpage]{zref}
+\input{loadCommands.tex}
+\usepackage[export]{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+
+
+\setuldepth{Berlin}
+
+\makeatletter
+\newcommand{\reallastpage}{%
+  \the\numexpr\zref@extractdefault{LastPage}{page}{0}-1\relax
+}
+
+
+
+\renewcommand*{\@Alph}[1]{%
+  \ifcase#1\or A\or B\or C\or
+    D\or E\or F\or G\or H\or I\or J\or
+    K\or L\or M\or N\or O\or P\or R\or S\or
+    T\or U\or V\or W\or X\or
+    Y\or Z\or AA\or AB\or AC\or
+    AD\or AE\or AF\or AG\or AH\or AI\or AJ\or
+    AK\or AL\or AM\or AN\or AO\or AP\or AR\or AS\or
+    AT\or AU\or AV\or AW\or AX\or
+    AY\or AZ \else\@ctrerr\fi
+}
+\makeatother
+
+\begin{document}  
+
+\input{title.tex}
+
+\setcounter{page}{1}
+\input{header.tex}
+\createlabel{def_uitfritsgarantie}{1K}
+\input{Hoofdstukken/Introductie.tex}
+\input{Hoofdstukken/Definities.tex}
+\input{Hoofdstukken/Regels.tex}
+\input{Hoofdstukken/Kaartnamen.tex}
+\input{Hoofdstukken/Varianten.tex}
+\input{Hoofdstukken/Uitspraken.tex}
+\input{Hoofdstukken/Zetten.tex}
+\input{stroomdiagram.tex}
+\end{document}

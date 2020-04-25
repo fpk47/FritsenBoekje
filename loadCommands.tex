@@ -1,0 +1,192 @@
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\newlength\q
+\setlength\q{\dimexpr .363\textwidth -4\tabcolsep}
+
+\newcommand{\drawBarFirstPage}[1]{
+%\vspace*{-1.1cm} 
+\hspace*{-2.5cm} 
+\noindent\begin{tabular}{p{1.1cm}L{\q}C{\q}R{\q}p{1.0cm}}
+
+ &  & 
+    %\textbf{#1}
+ & \textbf{\thepage} / \textbf{\reallastpage} &  \\
+
+\end{tabular}
+
+\vspace*{-0.2cm} 
+}
+
+\newcommand{\drawBar}[1]{
+%\vspace*{-1.1cm} 
+\hspace*{-2.5cm} 
+\noindent\begin{tabular}{p{1.1cm}L{\q}C{\q}R{\q}p{1.0cm}}
+
+ &  & 
+ &  \textbf{\thepage} / \textbf{\reallastpage}&  \\
+
+\end{tabular}
+
+\vspace*{-0.2cm} 
+}
+
+\newcommand{\drawParagraph}[1]{
+\paragraph{#1} \texttt{ } \newline
+}
+
+\newcommand{\createlabel}[2]{%
+    \expandafter\edef\csname#1\endcsname{#2}
+}
+
+\newcommand{\Ref}[1]{
+    \csname#1\endcsname
+}
+
+\newcommand{\EenSpeler}{\textbf{[Een speler] }}
+\newcommand{\eenSpeler}{\textbf{[een speler] }}
+\newcommand{\huidigeSpeler}{\textbf{[huidige speler] }}
+\newcommand{\HuidigeSpeler}{\textbf{[Huidige speler] }}
+\newcommand{\andereSpeler}{\textbf{[andere speler] }}
+\newcommand{\AndereSpeler}{\textbf{[Andere speler] }}
+\newcommand{\andereSpelers}{\textbf{[andere spelers] }}
+\newcommand{\AndereSpelers}{\textbf{[Andere spelers] }}
+\newcommand{\alleSpelers}{\textbf{[alle spelers] }}
+\newcommand{\AlleSpelers}{\textbf{[Alle spelers] }}
+\newcommand{\MedeSpelers}{\textbf{[Medespelers] }}
+\newcommand{\medeSpelers}{\textbf{[medespelers] }}
+\newcommand{\VolgendeSpeler}{\textbf{[Volgende speler] }}
+\newcommand{\volgendeSpeler}{\textbf{[volgende speler] }}
+\newcommand{\deSpeler}{\textbf{[de speler] }}
+\newcommand{\DeSpeler}{\textbf{[De speler] }}
+\newcommand{\Willem}{\textbf{[Willem] }}
+\newcommand{\Frits}{\textbf{[Frits] }}
+\newcommand{\Lisa}{\textbf{[Lisa] }}
+\newcommand{\Kim}{\textbf{[Kim] }}
+
+\newcommand{\Fritsen}{\textbf{Fritsen} }
+
+\newcommand{\customBox}[1]{
+    \begin{framed}
+    \noindent
+    #1
+    \end{framed}
+}
+
+\newcommand{\customBoxItalic}[1]{
+    \begin{framed}
+    \noindent
+    \textit{#1}
+    \end{framed}
+}
+
+
+\newcommand{\kaart}[1]{\textbf{\ul{#1}}}
+
+\newcommand{\hoofdstuk}[2]{\section*{#1. #2}}
+\newcommand{\deelhoofdstuk}[1]{\noindent\subsection*{#1}}
+
+\newcommand{\beginLijst}[1]{
+    \def \sectieNummer {#1}
+    \begin{enumerate}[label=\texttt{\sectieNummer-\arabic*}]
+}
+
+\newcommand{\vervolgLijst}[0]
+    {\begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},resume]
+}
+
+\newcommand{\numeriekeLijst}[0]
+    {\begin{enumerate}[label=\arabic*.,nolistsep]
+}
+
+\newcommand{\eindNumeriekeLijst}[0]{
+    \end{enumerate}
+}
+
+\newcommand{\beginABCLijst}[1]{
+    \def \sectieNummer {#1}
+    \begin{enumerate}[label=\texttt{\sectieNummer\Alph*},nolistsep]
+}
+
+\newcommand{\eindABCLijst}[0]{
+    \end{enumerate}
+}
+
+\newcommand{\puntLijst}[0]{
+    \begin{itemize}[label=$\circ$,nolistsep]
+}
+
+\newcommand{\eindPuntLijst}[0]{
+    \end{itemize}
+}
+
+\newcommand{\eindLijst}[0]{
+    \end{enumerate}
+}
+
+\newcommand{\quotes}[1]{\textquotedblleft\textit{#1}\textquotedblright}
+
+\setlength\tabcolsep{0pt}
+\newcommand{\kaartnaam}[3]{
+\begin{minipage}[c][2.5cm][c]{1.0\textwidth}
+    \begin{tabularx}{\textwidth}{ccXm{0.10cm}}
+        \includegraphics[height=1.6cm]{img/#2.png} &
+        \includegraphics[height=1.6cm]{img/#2.png} &
+        \vspace{-1.35cm}
+        \begin{flushright}
+            #3
+        \end{flushright}&
+    \end{tabularx}
+\end{minipage}
+}
+
+
+\newcommand{\zetKortKort}[3]{
+    \noindent
+    \begin{minipage}[t][2.5cm][t]{1.0\textwidth}
+    \begin{wrapfigure}{L}{#1\textwidth}
+        \vspace{-15pt}
+        \begin{center}
+            \includegraphics[width=#1\textwidth]{img/#2.png}
+        \end{center}
+    \end{wrapfigure}
+    #3
+   \end{minipage}
+}
+
+\newcommand{\zetKort}[4]{
+    \noindent
+    \begin{minipage}[t][2.5cm][t]{1.0\textwidth}
+    \begin{wrapfigure}{L}{#1\textwidth}
+        \vspace{-15pt}
+        \begin{center}
+            \includegraphics[width=#1\textwidth]{img/#2.png}
+        \end{center}
+    \end{wrapfigure}
+    #3:
+    \begin{itemize}[nolistsep,leftmargin=*]
+        \item #4
+    \end{itemize}
+   \end{minipage}
+}
+
+\newcommand{\zetLang}[5]{
+    \noindent
+    \begin{minipage}[t][2.5cm][t]{1.0\textwidth}
+    \begin{wrapfigure}{L}{#1\textwidth}
+        \vspace{-15pt}
+        \begin{center}
+            \includegraphics[width=#1\textwidth]{img/#2.png}
+        \end{center}
+    \end{wrapfigure}
+    #3: 
+    \begin{itemize}[nolistsep,leftmargin=*]
+        \item #4
+    \end{itemize}
+    #5
+   \end{minipage}
+}
