@@ -1,13 +1,20 @@
 \newpage
 \thispagestyle{empty}
 
+%
+
 % Define block styles
-\tikzstyle{thickBlock} = [rectangle, draw, fill=green!15, 
+\definecolor{StartEnd}{RGB}{251,232,166}
+\definecolor{Question}{RGB}{48,60,108}
+\definecolor{Action}{RGB}{244,151,108}
+\definecolor{Border}{RGB}{209,253,254}
+
+\tikzstyle{thickBlock} = [rectangle, draw, fill={StartEnd}, 
     text width=12em, text centered, ultra thick, minimum height=2em]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+\tikzstyle{block} = [rectangle, draw, fill={Action}, 
     text width=12em, text centered, thick, minimum height=2em]
 \tikzstyle{line} = [draw, -stealth', line width=0.05cm]
-\tikzstyle{cloud} = [draw, rectangle, thick, rounded corners=8, fill=red!20, minimum height=2em, text width=12em, text badly centered]
+\tikzstyle{cloud} = [draw={Question}, rectangle, thick, rounded corners=8, fill={Question}, minimum height=2em, text width=12em, text badly centered,text=Border ]
 
 \mbox{}
 \vfill
