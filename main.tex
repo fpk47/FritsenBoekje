@@ -19,8 +19,8 @@
 \usepackage{xstring}
 \usepackage{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows,positioning}
-\usepackage[labelformat=empty]{caption}
+\usetikzlibrary{shapes,arrows,positioning, calc}
+\usepackage[labelformat=empty,hypcap=false]{caption}
 \usepackage{fancyhdr}
 \usepackage[lastpage]{zref}
 \input{loadCommands.tex}
@@ -28,6 +28,14 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{comment}
+\usepackage{svg}
+
+\usepackage[most]{tcolorbox}
+\tcbset{on line, 
+        boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white,colback=cyan,  
+        highlight math style={enhanced}
+        }
 
 
 \setuldepth{Berlin}
