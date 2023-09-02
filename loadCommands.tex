@@ -8,31 +8,13 @@
 \newlength\q
 \setlength\q{\dimexpr .363\textwidth -4\tabcolsep}
 
-\newcommand{\drawBarFirstPage}[1]{
-%\vspace*{-1.1cm} 
-\hspace*{-2.5cm} 
-\noindent\begin{tabular}{p{1.1cm}L{\q}C{\q}R{\q}p{1.0cm}}
-
- &  & 
-    %\textbf{#1}
- & \textbf{\thepage} / \textbf{\reallastpage} &  \\
-
-\end{tabular}
-
-\vspace*{-0.2cm} 
-}
-
 \newcommand{\drawBar}[1]{
-%\vspace*{-1.1cm} 
-\hspace*{-2.5cm} 
-\noindent\begin{tabular}{p{1.1cm}L{\q}C{\q}R{\q}p{1.0cm}}
-
- &  & 
- &  \textbf{\thepage} / \textbf{\reallastpage}&  \\
-
-\end{tabular}
-
-\vspace*{-0.2cm} 
+\begin{minipage}[c][0.5cm][c]{1.0\textwidth}
+    \hspace*{-0.75cm} 
+    \ifodd\thepage\else\hfill\fi
+    \textbf{\thepage} / \textbf{\reallastpage}
+    \ifodd\thepage\else\hspace*{0.55cm}\fi
+\end{minipage}
 }
 
 \newcommand{\drawParagraph}[1]{
@@ -44,27 +26,76 @@
 }
 
 \newcommand{\EenSpeler}{\textbf{[Een speler] }}
+\newcommand{\EenSpelerN}{\textbf{[Een speler]}}
+
 \newcommand{\eenSpeler}{\textbf{[een speler] }}
+\newcommand{\eenSpelerN}{\textbf{[een speler]}}
+
 \newcommand{\huidigeSpeler}{\textbf{[huidige speler] }}
+\newcommand{\huidigeSpelerN}{\textbf{[huidige speler]}}
+
 \newcommand{\HuidigeSpeler}{\textbf{[Huidige speler] }}
+\newcommand{\HuidigeSpelerN}{\textbf{[Huidige speler]}}
+
 \newcommand{\andereSpeler}{\textbf{[andere speler] }}
+\newcommand{\andereSpelerN}{\textbf{[andere speler]}}
+
 \newcommand{\AndereSpeler}{\textbf{[Andere speler] }}
+\newcommand{\AndereSpelerN}{\textbf{[Andere speler]}}
+
 \newcommand{\andereSpelers}{\textbf{[andere spelers] }}
+\newcommand{\andereSpelersN}{\textbf{[andere spelers]}}
+
 \newcommand{\AndereSpelers}{\textbf{[Andere spelers] }}
-\newcommand{\alleSpelers}{\textbf{[alle spelers] }}
+\newcommand{\AndereSpelersN}{\textbf{[Andere spelers]}}
+
+\newcommand{\alleSpelers}{\textbf{[alle spelers]} }
+\newcommand{\alleSpelersN}{\textbf{[alle spelers]}}
+
 \newcommand{\AlleSpelers}{\textbf{[Alle spelers] }}
+\newcommand{\AlleSpelersN}{\textbf{[Alle spelers]}}
+
+\newcommand{\MedeSpeler}{\textbf{[Medespeler] }}
+\newcommand{\MedeSpelerN}{\textbf{[Medespeler]}}
+
+\newcommand{\medeSpeler}{\textbf{[medespeler]} }
+\newcommand{\medeSpelerN}{\textbf{[medespeler]}}
+
 \newcommand{\MedeSpelers}{\textbf{[Medespelers] }}
-\newcommand{\medeSpelers}{\textbf{[medespelers] }}
+\newcommand{\MedeSpelersN}{\textbf{[Medespelers]}}
+
+\newcommand{\medeSpelers}{\textbf{[medespelers]} }
+\newcommand{\medeSpelersN}{\textbf{[medespelers]}}
+
 \newcommand{\VorigeSpeler}{\textbf{[Vorige speler] }}
+\newcommand{\VorigeSpelerN}{\textbf{[Vorige speler]}}
+
 \newcommand{\vorigeSpeler}{\textbf{[vorige speler] }}
+\newcommand{\vorigeSpelerN}{\textbf{[vorige speler]}}
+
 \newcommand{\VolgendeSpeler}{\textbf{[Volgende speler] }}
+\newcommand{\VolgendeSpelerN}{\textbf{[Volgende speler]}}
+
 \newcommand{\volgendeSpeler}{\textbf{[volgende speler] }}
+\newcommand{\volgendeSpelerN}{\textbf{[volgende speler]}}
+
 \newcommand{\deSpeler}{\textbf{[de speler] }}
+\newcommand{\deSpelerN}{\textbf{[de speler]}}
+
 \newcommand{\DeSpeler}{\textbf{[De speler] }}
+\newcommand{\DeSpelerN}{\textbf{[De speler]}}
+
 \newcommand{\Willem}{\textbf{[Willem] }}
+\newcommand{\WillemN}{\textbf{[Willem]}}
+
 \newcommand{\Frits}{\textbf{[Frits] }}
+\newcommand{\FritsN}{\textbf{[Frits]}}
+
 \newcommand{\Lisa}{\textbf{[Lisa] }}
+\newcommand{\LisaN}{\textbf{[Lisa]}}
+
 \newcommand{\Kim}{\textbf{[Kim] }}
+\newcommand{\KimN}{\textbf{[Kim]}}
 
 \newcommand{\Fritsen}{\textbf{Fritsen} }
 
@@ -85,18 +116,25 @@
 
 \newcommand{\kaart}[1]{\textbf{\ul{#1}}}
 
-\newcommand{\hoofdstuk}[2]{\section*{#1. #2}}
-\newcommand{\deelhoofdstuk}[1]{\noindent\subsection*{#1}}
-
-\newcommand{\deelhoofdstukMetLabel}[1]{\noindent\subsection*{#1}}
+\newcommand{\hoofdstuk}[2]{\vspace{-0.5cm}\section*{#1. #2}}
+\newcommand{\deelhoofdstuk}[1]{\vspace{-0.5cm}\noindent\subsection*{#1}}
 
 \newcommand{\beginLijst}[1]{
     \def \sectieNummer {#1}
-    \begin{enumerate}[label=\texttt{\sectieNummer-\arabic*}]
+    \begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},align=left, labelwidth=31pt, leftmargin=37pt]
 }
 
 \newcommand{\vervolgLijst}[0]
-    {\begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},resume]
+    {\begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},resume,align=left, labelwidth=31pt, leftmargin=37pt]
+}
+
+\newcommand{\beginLijstKlein}[1]{
+    \def \sectieNummer {#1}
+    \begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},align=left, labelwidth=21pt, leftmargin=27pt]
+}
+
+\newcommand{\vervolgLijstKlein}[0]
+    {\begin{enumerate}[label=\texttt{\sectieNummer-\arabic*},resume,align=left, labelwidth=21pt, leftmargin=27pt]
 }
 
 \newcommand{\numeriekeLijst}[0]
@@ -109,8 +147,14 @@
 
 \newcommand{\beginABCLijst}[1]{
     \def \sectieNummer {#1}
-    \begin{enumerate}[label=\texttt{\sectieNummer\Alph*},nolistsep]
+    \begin{enumerate}[label=\texttt{\sectieNummer\Alph*},nolistsep,align=left, labelwidth=25pt, leftmargin=31pt]
 }
+
+\newcommand{\beginABCLijstKlein}[1]{
+    \def \sectieNummer {#1}
+    \begin{enumerate}[label=\texttt{\sectieNummer\Alph*},nolistsep,align=left, labelwidth=13pt, leftmargin=19pt]
+}
+
 
 \newcommand{\eindABCLijst}[0]{
     \end{enumerate}
@@ -132,8 +176,8 @@
 
 \setlength\tabcolsep{0pt}
 \newcommand{\kaartnaam}[5]{
-\begin{minipage}[c][2.5cm][c]{1.0\textwidth}
-    \begin{tabularx}{\textwidth}{Xccccm{0.30cm}}
+\begin{minipage}[c][2.25cm][c]{1.0\textwidth}
+    \begin{tabularx}{\textwidth}{Xccccm{0.00cm}}
         \vspace{-1.6cm}
         \begin{flushleft}
             #1
@@ -162,209 +206,165 @@
 \end{minipage}
 }
 
-
-\newcommand{\zetKortKort}[4]{
-\textbf{#1} \\
+\newcommand{\zetKort}[8]{
+\deelhoofdstuk{#1}
     \noindent
-    \begin{minipage}[t][2.5cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{#2\textwidth}
-        \vspace{-15pt}
-        \begin{center}
-            \includegraphics[width=#2\textwidth]{img/#3.png}
-        \end{center}
-    \end{wrapfigure}
-    #4
-   \end{minipage}
-}
-
-\newcommand{\zetKort}[5]{
-\textbf{#1} \\
-    \noindent
-    \begin{minipage}[t][2.5cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{#2\textwidth}
-        \vspace{-15pt}
-        \begin{center}
-            \includegraphics[width=#2\textwidth]{img/#3.png}
-        \end{center}
-    \end{wrapfigure}
-    #4:
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #5
-    \end{itemize}
-   \end{minipage}
-}
-
-
-\newcommand{\zetLangTweePunten}[6]{
-    \noindent
-    \begin{minipage}[t][2.7cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{#1\textwidth}
-        \vspace{-15pt}
-        \begin{center}
-            \includegraphics[width=#1\textwidth]{img/#2.png}
-        \end{center}
-    \end{wrapfigure}
-    #3: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #4
-        \item #5
-    \end{itemize}
-    #6
-   \end{minipage}
-}
-
-\newcommand{\zetLang}[5]{
-    \noindent
-    \begin{minipage}[t][2.7cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{#1\textwidth}
-        \vspace{-15pt}
-        \begin{center}
-            \includegraphics[width=#1\textwidth]{img/#2.png}
-        \end{center}
-    \end{wrapfigure}
-    #3: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #4
-    \end{itemize}
-    #5
-   \end{minipage}
-}
-
-\newcommand{\zetLangNewKoningAas}[5]{
-    \noindent
-    \begin{minipage}[t][3.5cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{11.5cm}
-      \vspace{-15pt}
-        \begin{tikzpicture}
+    \begin{tikzpicture}
         \def\h{2.5}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#1.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#1.svg}};
-           \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#1.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
+        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+    \end{tikzpicture}
+    \begin{tikzpicture}
         \def\h{2.5}
-                  \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#2.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#2.svg}};
-           \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#2.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
+        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}};
+    \end{tikzpicture}
+    \begin{tikzpicture}
         \def\h{2.5}
-                   \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#3.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#3.svg}};
-           \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#32.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
-        \def\h{2.5}
-                   \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#4.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#4.svg}};
-           \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#4.svg}};
-        \end{tikzpicture}
-    \end{wrapfigure}
-    #5.
-   \end{minipage}
-}
-
-\newcommand{\zetLangNewTweePunten}[8]{
-    \noindent
-    \begin{minipage}[t][3.5cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{5.0cm}
-      \vspace{-15pt}
-        \begin{tikzpicture}
-        \def\h{2.5}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#1.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
-        \def\h{2.5}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-        \end{tikzpicture}
-    \end{wrapfigure}
-    #5: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #6
-        \item #7
-    \end{itemize}
+        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#6.svg}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#7.svg}};
+    \end{tikzpicture}
+    \newline
     #8
-   \end{minipage}
 }
 
-\newcommand{\zetLangNew}[7]{
+\newcommand{\zetKoningAas}[5]{
     \noindent
     \begin{minipage}[t][3.5cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{5.0cm}
-      \vspace{-15pt}
-        \begin{tikzpicture}
-        \def\h{2.5}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#1.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
-        \def\h{2.5}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-        \end{tikzpicture}
-    \end{wrapfigure}
-    #5: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #6
-    \end{itemize}
-    #7
-   \end{minipage}
+        \begin{wrapfigure}{L}{10.9cm}
+            \vspace{-15pt}
+            \begin{tikzpicture}
+                \def\h{2.4}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#1.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#1.svg}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#1.svg}};
+            \end{tikzpicture}
+            \begin{tikzpicture}
+                \def\h{2.4}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#2.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#2.svg}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#2.svg}};
+            \end{tikzpicture}
+            \begin{tikzpicture}
+                \def\h{2.4}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#3.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#3.svg}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#32.svg}};
+            \end{tikzpicture}
+            \begin{tikzpicture}
+                \def\h{2.4}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#4.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#4.svg}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#4.svg}};
+            \end{tikzpicture}
+        \end{wrapfigure}
+        #5.
+    \end{minipage}
 }
 
-\newcommand{\zetLangKleinNew}[7]{
+\newcommand{\zetLangMetKruis}[9]{
     \noindent
-    \begin{minipage}[t][2.55cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{4.95cm}
-      \vspace{-15pt}
-        \begin{tikzpicture}
-        \def\h{2.45}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#1.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
-        \def\h{2.45}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-        \end{tikzpicture}
-    \end{wrapfigure}
-    #5: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #6
-    \end{itemize}
-    #7
-   \end{minipage}
+    \begin{minipage}[t][#1cm][t]{1.0\textwidth}
+        \begin{wrapfigure}{L}{5.0cm}
+            \vspace{-15pt}
+            \begin{tikzpicture}
+                \def\h{2.5}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+            \end{tikzpicture}
+            \begin{tikzpicture}
+                \def\h{2.5}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}};
+                
+                \draw [red,ultra thick,rounded corners]([xshift=\h*0.04cm,yshift=-\h*0.04cm]img1.north west) -- ([xshift=-\h*0.04cm,yshift=\h*0.04cm]img2.south east);
+                \draw [red,ultra thick,rounded corners]([xshift=-\h*0.04cm,yshift=\h*0.05cm]img2.north east) -- ([xshift=-\h*0.085cm,yshift=\h*0.04cm]img2.south west);   
+            \end{tikzpicture}
+        \end{wrapfigure}
+        #6: 
+        \ifx&#7&%
+        \else
+            \ifx&#8&%
+                \begin{itemize}[nolistsep,leftmargin=*]
+                    \item #7
+                \end{itemize}       
+            \else
+                \begin{itemize}[nolistsep,leftmargin=*]
+                    \item #7
+                    \item #8
+                \end{itemize}
+            \fi
+        \fi
+        \ifx&#9&%
+        \else
+            \ifx&#7&%
+                \newline
+                #9
+            \else
+                #9
+            \fi
+        \fi
+    \end{minipage}
 }
 
-\newcommand{\zetLangKleinNewTweePunten}[8]{
+\newcommand{\zetLang}[9]{
     \noindent
-    \begin{minipage}[t][2.55cm][t]{1.0\textwidth}
-    \begin{wrapfigure}{L}{4.95cm}
-      \vspace{-15pt}
-        \begin{tikzpicture}
-        \def\h{2.45}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#1.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-        \end{tikzpicture}
-        \begin{tikzpicture}
-        \def\h{2.45}
-          \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
-          \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-        \end{tikzpicture}
-    \end{wrapfigure}
-    #5: 
-    \begin{itemize}[nolistsep,leftmargin=*]
-        \item #6
-        \item #7
-    \end{itemize}
-    #8
-   \end{minipage}
+    \begin{minipage}[t][#1cm][t]{1.0\textwidth}
+        \begin{wrapfigure}{L}{5.0cm}
+            \vspace{-15pt}
+            \begin{tikzpicture}
+                \def\h{2.5}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+            \end{tikzpicture}
+            \begin{tikzpicture}
+                \def\h{2.5}
+                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}}; 
+            \end{tikzpicture}
+        \end{wrapfigure}
+        #6: 
+        \ifx&#7&%
+        \else
+            \ifx&#8&%
+                \begin{itemize}[nolistsep,leftmargin=*]
+                    \item #7
+                \end{itemize}       
+            \else
+                \begin{itemize}[nolistsep,leftmargin=*]
+                    \item #7
+                    \item #8
+                \end{itemize}
+            \fi
+        \fi
+        \ifx&#9&%
+        \else
+            \ifx&#7&%
+                \newline
+                #9
+            \else
+                #9
+            \fi
+        \fi
+    \end{minipage}
 }
 
 \newcommand{\proLabel}[0]{
+    \hspace{-0.25cm}\tcbox{\textit{\textcolor{white}{PRO}}}
+}
+
+\newcommand{\proLabelMetRuimte}[0]{
     \tcbox{\textit{\textcolor{white}{PRO}}}
 }
+
+\newcommand{\tweedeDruk}[0]{
+\begingroup
+    \fontsize{30pt}{32pt}\selectfont
+    \tcbox{\textit{\textcolor{white}{2\textsuperscript{e} druk}}}
+\endgroup
+}
+
+
 
 
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
