@@ -1,0 +1,11 @@
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.synctex.gz
+main.synctex
+main.synctex(busy)
+
+.DS_Store
+temp.txt
