@@ -185,22 +185,22 @@
         \ifx&#2&%
             &
         \else
-            \includesvg[inkscapearea=page,inkscapeformat=png,height=2cm]{img/cards/svg/#2.svg} \hspace{0.05cm} &
+            \includegraphics[height=2cm]{img/cards/generated/#2.png} \hspace{0.05cm} &
         \fi
         \ifx&#3&%
             &
         \else
-            \includesvg[inkscapearea=page,inkscapeformat=png,height=2.0cm]{img/cards/svg/#3.svg} \hspace{0.05cm} &
+            \includegraphics[height=2.0cm]{img/cards/generated/#3.png} \hspace{0.05cm} &
         \fi
         \ifx&#4&%
             &
         \else
-            \includesvg[inkscapearea=page,inkscapeformat=png,height=2.0cm]{img/cards/svg/#4.svg} \hspace{0.05cm} &
+            \includegraphics[height=2.0cm]{img/cards/generated/#4.png} \hspace{0.05cm} &
         \fi
         \ifx&#5&%
             &
         \else
-            \includesvg[inkscapearea=page,inkscapeformat=png,height=2.0cm]{img/cards/svg/#5.svg} &
+            \includegraphics[height=2.0cm]{img/cards/generated/#5.png} &
         \fi
     \end{tabularx}
 \end{minipage}
@@ -211,18 +211,18 @@
     \noindent
     \begin{tikzpicture}
         \def\h{2.5}
-        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+        \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#2.png}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#3.png}};
     \end{tikzpicture}
     \begin{tikzpicture}
         \def\h{2.5}
-        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}};
+        \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#4.png}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#5.png}};
     \end{tikzpicture}
     \begin{tikzpicture}
         \def\h{2.5}
-        \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#6.svg}};
-        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#7.svg}};
+        \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#6.png}};
+        \node (img2) at (img1.south east) [xshift=-\h*0.29cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#7.png}};
     \end{tikzpicture}
     \newline
     #8
@@ -235,27 +235,27 @@
             \vspace{-15pt}
             \begin{tikzpicture}
                 \def\h{2.4}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#1.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#1.svg}};
-                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#1.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/queen_of_#1.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/king_of_#1.png}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includegraphics[height=\h cm]{img/cards/generated/ace_of_#1.png}};
             \end{tikzpicture}
             \begin{tikzpicture}
                 \def\h{2.4}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#2.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#2.svg}};
-                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#2.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/queen_of_#2.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/king_of_#2.png}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includegraphics[height=\h cm]{img/cards/generated/ace_of_#2.png}};
             \end{tikzpicture}
             \begin{tikzpicture}
                 \def\h{2.4}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#3.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#3.svg}};
-                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#32.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/queen_of_#3.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/king_of_#3.png}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includegraphics[height=\h cm]{img/cards/generated/ace_of_#32.png}};
             \end{tikzpicture}
             \begin{tikzpicture}
                 \def\h{2.4}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/queen_of_#4.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/king_of_#4.svg}};
-                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/ace_of_#4.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/queen_of_#4.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/king_of_#4.png}};
+                \node (img3) at (img2.south east) [xshift=-\h*0.27cm,yshift=\h*0.555cm] {\includegraphics[height=\h cm]{img/cards/generated/ace_of_#4.png}};
             \end{tikzpicture}
         \end{wrapfigure}
         #5.
@@ -269,13 +269,13 @@
             \vspace{-15pt}
             \begin{tikzpicture}
                 \def\h{2.5}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#2.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#3.png}};
             \end{tikzpicture}
             \begin{tikzpicture}
                 \def\h{2.5}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#4.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#5.png}};
                 
                 \draw [red,ultra thick,rounded corners]([xshift=\h*0.04cm,yshift=-\h*0.04cm]img1.north west) -- ([xshift=-\h*0.04cm,yshift=\h*0.04cm]img2.south east);
                 \draw [red,ultra thick,rounded corners]([xshift=-\h*0.04cm,yshift=\h*0.05cm]img2.north east) -- ([xshift=-\h*0.085cm,yshift=\h*0.04cm]img2.south west);   
@@ -314,13 +314,13 @@
             \vspace{-15pt}
             \begin{tikzpicture}
                 \def\h{2.5}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#2.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#3.svg}};
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#2.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#3.png}};
             \end{tikzpicture}
             \begin{tikzpicture}
                 \def\h{2.5}
-                \node (img1) {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#4.svg}};
-                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includesvg[inkscapearea=page,inkscapeformat=png,height=\h cm]{img/cards/svg/#5.svg}}; 
+                \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#4.png}};
+                \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#5.png}}; 
             \end{tikzpicture}
         \end{wrapfigure}
         #6: 
