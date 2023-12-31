@@ -7,7 +7,7 @@ cd svg/
 find *.svg > temp.txt
 
 for NAME in $(cat temp.txt); do # Whitespace-safe but not recursive.
-  inkscape --export-dpi=1200 --export-type=png $NAME
+  inkscape --export-dpi=300 --export-type=png $NAME
   NEWNAME=$(echo "$NAME" | sed "s/.svg//g")
   echo "$NEWNAME"
   mv $NAME.png $(pwd)/../generated/${NEWNAME}.png
