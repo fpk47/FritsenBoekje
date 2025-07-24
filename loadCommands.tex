@@ -240,7 +240,7 @@
 \end{minipage}
 }
 
-\newcommand{\zetKort}[8]{
+\newcommand{\zetKortDrieStapels}[8]{
 \deelhoofdstuk{#1}
     \noindent
     \begin{tikzpicture}
@@ -262,7 +262,7 @@
     #8
 }
 
-\newcommand{\zetKortMetKruis}[8]{
+\newcommand{\zetKortDrieStapelsMetKruis}[8]{
 \deelhoofdstuk{#1}
     \noindent
     \begin{tikzpicture}
@@ -321,7 +321,7 @@
     \end{minipage}
 }
 
-\newcommand{\zetLangMetKruis}[9]{
+\newcommand{\zetLangTweeStapelsMetKruis}[9]{
     \noindent
     \begin{minipage}[t][#1cm][t]{1.0\textwidth}
         \begin{wrapfigure}{L}{5.0cm}
@@ -366,7 +366,35 @@
     \end{minipage}
 }
 
-\newcommand{\zetLang}[9]{
+\newcommand{\zetLangDrieStapelsMetKruis}[8]{
+   \noindent
+   \begin{minipage}[t][#1cm][t]{1.0\textwidth}
+       \begin{wrapfigure}{L}{7.5cm}
+           \vspace{-15pt}
+           \begin{tikzpicture}
+               \def\h{2.5}
+               \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#2.png}};
+               \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#3.png}};
+           \end{tikzpicture}
+           \begin{tikzpicture}
+               \def\h{2.5}
+               \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#4.png}};
+               \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#5.png}};
+           \end{tikzpicture}
+           \begin{tikzpicture}
+               \def\h{2.5}
+               \node (img1) {\includegraphics[height=\h cm]{img/cards/generated/#6.png}};
+               \node (img2) at (img1.south east) [xshift=-\h*0.27cm,yshift=\h*0.455cm] {\includegraphics[height=\h cm]{img/cards/generated/#7.png}};
+               
+               \draw [red,ultra thick,rounded corners]([xshift=\h*0.04cm,yshift=-\h*0.04cm]img1.north west) -- ([xshift=-\h*0.04cm,yshift=\h*0.04cm]img2.south east);
+               \draw [red,ultra thick,rounded corners]([xshift=-\h*0.04cm,yshift=\h*0.05cm]img2.north east) -- ([xshift=-\h*0.085cm,yshift=\h*0.04cm]img2.south west);   
+           \end{tikzpicture}
+       \end{wrapfigure}
+       #8
+   \end{minipage}
+}
+
+\newcommand{\zetLangTweeStapels}[9]{
     \noindent
     \begin{minipage}[t][#1cm][t]{1.0\textwidth}
         \begin{wrapfigure}{L}{5.0cm}
